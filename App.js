@@ -5,11 +5,11 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View>
-            <Text>Calculator</Text>
+        <View >
+            <Text style={styles.title}>Calculator</Text>
         </View>
-        <View>
-            <Text>1 + 1</Text>
+        <View style={styles.display}>
+            <Text style={styles.title}>1 + 1</Text>
         </View>
         <View>
             <Text>1-3</Text>
@@ -34,8 +34,24 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#696969',
     alignItems: 'center',
     justifyContent:"space-around",
   },
+    
+  display:{
+    display:"flex",
+    justifyContent:"center",
+    alignContent:"center",
+    backgroundColor:"white",
+    width:"50%",
+    height:"10%",
+    //textAlign:"center",
+  },
+    
+  title: {    
+    color:"goldenrod",
+    textAlign:"center",
+    fontSize:24,
+  }
 });
