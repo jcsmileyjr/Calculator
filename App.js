@@ -11,21 +11,32 @@ export default class App extends React.Component {
         <View style={styles.display}>
             <Text style={styles.title}>1 + 1</Text>
         </View>
-        <View>
-            <Text>1-3</Text>
+        <View style={styles.calcKeyRow}>
+            <Text style={[styles.title, styles.calcKey]}>1</Text>
+            <Text style={[styles.title, styles.calcKey]}>2</Text>
+            <Text style={[styles.title, styles.calcKey]}>3</Text>
         </View>
-        <View>
-            <Text>4-6</Text>
+        <View style={styles.calcKeyRow}>
+            <Text style={[styles.title, styles.calcKey]}>4</Text>
+            <Text style={[styles.title, styles.calcKey]}>5</Text>
+            <Text style={[styles.title, styles.calcKey]}>6</Text>
         </View>
-        <View>
-            <Text>7-9</Text>
+        <View style={styles.calcKeyRow}>
+            <Text style={[styles.title, styles.calcKey]}>7</Text>
+            <Text style={[styles.title, styles.calcKey]}>8</Text>
+            <Text style={[styles.title, styles.calcKey]}>9</Text>
         </View>
-        <View>
-            <Text>0-Go</Text>
+        <View style={styles.calcKeyRow}>
+            <Text style={[styles.title, styles.calcKey]}>0</Text>
+            <Text style={[styles.title, styles.calcKey]}>Clear</Text>
+            <Text style={[styles.title, styles.calcKey]}>Go</Text>
         </View>
-        <View>
-            <Text>+ - /</Text>
-        </View>        
+        <View style={styles.calcKeyRow}>
+            <Text style={[styles.title, styles.operatorCalcKey]}>+</Text>
+            <Text style={[styles.title, styles.operatorCalcKey]}>-</Text>
+            <Text style={[styles.title, styles.operatorCalcKey]}>*</Text>
+            <Text style={[styles.title, styles.operatorCalcKey]}>/</Text>
+        </View>      
       </View>
     );
   }
@@ -52,6 +63,25 @@ const styles = StyleSheet.create({
   title: {    
     color:"goldenrod",
     textAlign:"center",
-    fontSize:24,
+    fontSize:36,
+  },
+    
+  calcKeyRow:{
+    //backgroundColor:"grey",
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-around",
+    alignItems:"center",
+    width:"100%",
+  },
+    
+  calcKey:{
+    backgroundColor:"grey",
+    flex:.25
+  },
+    
+  operatorCalcKey:{
+    backgroundColor:"grey",
+    flex:.2
   }
 });
