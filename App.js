@@ -14,9 +14,9 @@ export default class App extends React.Component {
             <Text style={styles.title}>1 + 1</Text>
         </View>
         <View style={styles.calcKeyRow}>
-            <Text style={[styles.title, styles.calcKey]}>1</Text>
-            <Text style={[styles.title, styles.calcKey]}>2</Text>
-            <Text style={[styles.title, styles.calcKey]}>3</Text>
+            <CalcKeys displayKey={1} />
+            <CalcKeys displayKey={2} />
+            <CalcKeys displayKey={3} />
         </View>
         <View style={styles.calcKeyRow}>
             <Text style={[styles.title, styles.calcKey]}>4</Text>

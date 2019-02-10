@@ -1,25 +1,26 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-class CalcKeys extends Component{
+export default class CalcKeys extends Component{
   render(){
     return(
-        <View>
-            <Text style={[styles.calcKey]}>1</Text>
-            <Text style={[styles.calcKey]}>2</Text>
-            <Text style={[styles.calcKey]}>3</Text>
+        <View style={styles.calcKey}>
+            <Text style = {styles.textDisplay} >{this.props.displayKey}</Text>
         </View>        
     );
   }
 }
 
 const styles = StyleSheet.create({
-  calcKey:{
-    color:"goldenrod",
-    textAlign:"center",
-    fontSize:36,      
+  calcKey:{   
     backgroundColor:"grey",
     flex:.25
-  }  
+  },
+    
+  textDisplay:{
+    color:"goldenrod",
+    textAlign:"center",
+    fontSize:36,         
+  }
     
 });
