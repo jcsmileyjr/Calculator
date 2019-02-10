@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class CalcKeys extends Component{
   render(){
     return(
-        <View style={styles.calcKey}>
+        <View>
             <Text style = {styles.textDisplay} >{this.props.displayKey}</Text>
         </View>        
     );
