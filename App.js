@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import CalcKeys from "./components/CalcKeys.js";
+
 export default class App extends React.Component {
   render() {
     return (
