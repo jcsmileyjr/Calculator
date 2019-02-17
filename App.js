@@ -17,8 +17,7 @@ export default class App extends React.Component {
   }
 
   clear(){
-    this.setState((state, props) => ({ display:""}));
-console.log("working");    
+    this.setState((state, props) => ({ display:""}));  
   }
 
   evalutate(x,y,operator){
@@ -69,7 +68,7 @@ console.log("working");
         <View style={styles.calcKeyRow}>
             <CalcKeys displayKey="0" onClick={()=> this.addNumber("0")} />
             <CalcKeys onClick={()=> this.clear()} displayKey="Clear" />
-            <CalcKeys displayKey="Go" />
+            <CalcKeys displayKey="Go" onClick={()=> this.evalutate(this.state.numerator, this.state.denominator, this.state.operator)} />
         </View>
         <View style={styles.calcKeyRow}>
             <OperatorKeys displayKey="+" onClick={()=> this.operatorSymbol("+")} />
