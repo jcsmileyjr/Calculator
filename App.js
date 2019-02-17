@@ -41,12 +41,6 @@ export default class App extends React.Component {
   }
 
   addNumber(x){
-    //clear display if there is a previous calculation  
-    /*  
-    if(this.state.switchFractionSection == false){
-        this.setState((prevState) => ({display:""}))
-    }
-    */
     //show the number clicked on the display. IF this is the first number saved it is save as the denominator If this is the second number enter, it is saved as the numerator.  
     this.setState((state, props) => ({ display: state.display + x }))    
     if(this.state.switchFractionSection ==true){
@@ -57,6 +51,12 @@ export default class App extends React.Component {
   }
 
   operatorSymbol(x){
+    
+    //If display already have a number and the user press a operator button, then the current display number is save as the numerator
+    if(this.state.numerator == "" && this.state.switchFractionSection == false){
+        this.setState((state, props) => ({numerator:this.state.display}))
+    }
+      
     this.setState((state, props)=>({display:state.display + x}))
     this.setState((state, props) => ({ operator: x }))
     this.setState((state, props) => ({switchFractionSection:true }))
