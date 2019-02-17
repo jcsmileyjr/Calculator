@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default class CalcKeys extends Component{
   render(){
     return(
         <View style={styles.calcKey}>
-            <Text style = {styles.textDisplay} >{this.props.displayKey}</Text>
+            <Button style = {styles.textDisplay} 
+            title = {this.props.displayKey} 
+            onPress = {()=>{this.props.onClick()}}></Button>
         </View>        
     );
   }

@@ -8,7 +8,7 @@ export default class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      display:"",
+      display:"1",
       numerator:"",
       denominator:"",
       operator:"",
@@ -17,7 +17,8 @@ export default class App extends React.Component {
   }
 
   clear(){
-    this.setState((state, props) => ({ display:""}))    
+    this.setState((state, props) => ({ display:""}));
+console.log("working");    
   }
 
   evalutate(x,y,operator){
@@ -48,10 +49,10 @@ export default class App extends React.Component {
             <Text style={styles.title}>Calculator</Text>
         </View>
         <View style={styles.display}>
-            <Text style={styles.title}>1 + 1</Text>
+            <Text style={styles.title}>{this.state.display}</Text>
         </View>
         <View style={styles.calcKeyRow}>
-            <CalcKeys displayKey="1" />
+            <CalcKeys displayKey="1" onClick={()=> this.addNumber("1")} />
             <CalcKeys displayKey="2" />
             <CalcKeys displayKey="3" />
         </View>
@@ -67,7 +68,7 @@ export default class App extends React.Component {
         </View>
         <View style={styles.calcKeyRow}>
             <CalcKeys displayKey="0" />
-            <CalcKeys displayKey="Clear" />
+            <CalcKeys onClick={()=> this.clear()} displayKey="Clear" />
             <CalcKeys displayKey="Go" />
         </View>
         <View style={styles.calcKeyRow}>
