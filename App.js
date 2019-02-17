@@ -5,6 +5,42 @@ import CalcKeys from "./components/CalcKeys.js";
 import OperatorKeys from "./components/OperatorKeys.js";
 
 export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      display:"",
+      numerator:"",
+      denominator:"",
+      operator:"",
+      switchFractionSection:false
+      }
+  }
+
+  clear(){
+    this.setState((state, props) => ({ display:""}))    
+  }
+
+  evalutate(x,y,operator){
+    if(operator == "+" ){
+      this.setState((state, props) => ({ display: parseInt(x) + parseInt(y) }))
+      this.setState((state, props) => ({ switchFractionSection: false }))
+    }
+  }
+
+  addNumber(x){
+    this.setState((state, props) => ({ display: state.display + x }))    
+    if(this.state.switchFractionSection ==true){
+      this.setState((prevState) =>({denominator:x}))
+    }else{
+      this.setState((prevState) => ({numerator:x}))
+    }
+  }
+
+  operatorSymbol(x){
+    this.setState((state, props)=>({display:state.display + x}))
+    this.setState((state, props) => ({ operator: x }))
+    this.setState((state, props) => ({switchFractionSection:true }))
+  }    
   render() {
     return (
       <View style={styles.container}>
