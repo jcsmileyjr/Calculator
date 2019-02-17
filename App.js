@@ -72,10 +72,10 @@ console.log("working");
             <CalcKeys displayKey="Go" />
         </View>
         <View style={styles.calcKeyRow}>
-            <OperatorKeys displayKey="+" />
-            <OperatorKeys displayKey="-" />
-            <OperatorKeys displayKey="*" />
-            <OperatorKeys displayKey="/" />
+            <OperatorKeys displayKey="+" onClick={()=> this.operatorSymbol("+")} />
+            <OperatorKeys displayKey="-" onClick={()=> this.operatorSymbol("-")} />
+            <OperatorKeys displayKey="*" onClick={()=> this.operatorSymbol("x")} />
+            <OperatorKeys displayKey="/" onClick={()=> this.operatorSymbol("/")} />
         </View>      
       </View>
     );
