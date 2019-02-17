@@ -24,6 +24,15 @@ export default class App extends React.Component {
     if(operator == "+" ){
       this.setState((state, props) => ({ display: parseInt(x) + parseInt(y) }))
       this.setState((state, props) => ({ switchFractionSection: false }))
+    }else if(operator == "-"){
+      this.setState((state, props) => ({ display: parseInt(x) - parseInt(y) }))
+      this.setState((state, props) => ({ switchFractionSection: false }))        
+    }else if(operator == "x"){
+      this.setState((state, props) => ({ display: parseInt(x) * parseInt(y) }))
+      this.setState((state, props) => ({ switchFractionSection: false }))         
+    }else {
+      this.setState((state, props) => ({ display: parseInt(x) / parseInt(y) }))
+      this.setState((state, props) => ({ switchFractionSection: false }))         
     }
   }
 
