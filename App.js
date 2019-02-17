@@ -34,9 +34,19 @@ export default class App extends React.Component {
       this.setState((state, props) => ({ display: parseInt(x) / parseInt(y) }))
       this.setState((state, props) => ({ switchFractionSection: false }))         
     }
+      
+    //Clear state for next operation
+    this.setState((prevState) =>({denominator:""}))
+    this.setState((prevState) =>({numerator:""}))
   }
 
   addNumber(x){
+    //clear display if there is a previous calculation  
+    if(this.state.switchFractionSection == false){
+        this.setState((prevState) => ({display:""}))
+    }
+    
+    //show the number clicked on the display. IF this is the first number saved it is save as the denominator If this is the second number enter, it is saved as the numerator.  
     this.setState((state, props) => ({ display: state.display + x }))    
     if(this.state.switchFractionSection ==true){
       this.setState((prevState) =>({denominator:x}))
