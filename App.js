@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import CalcKeys from "./components/CalcKeys.js";
+import OperatorKeys from "./components/OperatorKeys.js";
+
 export default class App extends React.Component {
   render() {
     return (
@@ -12,30 +15,30 @@ export default class App extends React.Component {
             <Text style={styles.title}>1 + 1</Text>
         </View>
         <View style={styles.calcKeyRow}>
-            <Text style={[styles.title, styles.calcKey]}>1</Text>
-            <Text style={[styles.title, styles.calcKey]}>2</Text>
-            <Text style={[styles.title, styles.calcKey]}>3</Text>
+            <CalcKeys displayKey="1" />
+            <CalcKeys displayKey="2" />
+            <CalcKeys displayKey="3" />
         </View>
         <View style={styles.calcKeyRow}>
-            <Text style={[styles.title, styles.calcKey]}>4</Text>
-            <Text style={[styles.title, styles.calcKey]}>5</Text>
-            <Text style={[styles.title, styles.calcKey]}>6</Text>
+            <CalcKeys displayKey="4" />
+            <CalcKeys displayKey="5" />
+            <CalcKeys displayKey="6" />
         </View>
         <View style={styles.calcKeyRow}>
-            <Text style={[styles.title, styles.calcKey]}>7</Text>
-            <Text style={[styles.title, styles.calcKey]}>8</Text>
-            <Text style={[styles.title, styles.calcKey]}>9</Text>
+            <CalcKeys displayKey="7" />
+            <CalcKeys displayKey="8" />
+            <CalcKeys displayKey="9" />
         </View>
         <View style={styles.calcKeyRow}>
-            <Text style={[styles.title, styles.calcKey]}>0</Text>
-            <Text style={[styles.title, styles.calcKey]}>Clear</Text>
-            <Text style={[styles.title, styles.calcKey]}>Go</Text>
+            <CalcKeys displayKey="0" />
+            <CalcKeys displayKey="Clear" />
+            <CalcKeys displayKey="Go" />
         </View>
         <View style={styles.calcKeyRow}>
-            <Text style={[styles.title, styles.operatorCalcKey]}>+</Text>
-            <Text style={[styles.title, styles.operatorCalcKey]}>-</Text>
-            <Text style={[styles.title, styles.operatorCalcKey]}>*</Text>
-            <Text style={[styles.title, styles.operatorCalcKey]}>/</Text>
+            <OperatorKeys displayKey="+" />
+            <OperatorKeys displayKey="-" />
+            <OperatorKeys displayKey="*" />
+            <OperatorKeys displayKey="/" />
         </View>      
       </View>
     );
@@ -67,7 +70,6 @@ const styles = StyleSheet.create({
   },
     
   calcKeyRow:{
-    //backgroundColor:"grey",
     display:"flex",
     flexDirection:"row",
     justifyContent:"space-around",
@@ -77,11 +79,11 @@ const styles = StyleSheet.create({
     
   calcKey:{
     backgroundColor:"grey",
-    flex:.25
+    flex:.3,
   },
     
   operatorCalcKey:{
     backgroundColor:"grey",
-    flex:.2
+    flex:.2,
   }
 });
