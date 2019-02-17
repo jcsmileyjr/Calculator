@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default class OperatorKeys extends Component{
   render(){
     return(
         <View style={styles.calcKey}>
-            <Text style = {styles.textDisplay} >{this.props.displayKey}</Text>
-        </View>        
+            <TouchableOpacity onPress={()=>{this.props.onClick()}}>
+                <Text style={styles.textDisplay}>{this.props.displayKey}</Text>
+            </TouchableOpacity>
+        </View>
     );
   }
 }
