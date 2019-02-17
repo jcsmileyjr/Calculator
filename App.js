@@ -8,7 +8,7 @@ export default class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      display:"1",
+      display:"",
       numerator:"",
       denominator:"",
       operator:"",
@@ -53,21 +53,21 @@ console.log("working");
         </View>
         <View style={styles.calcKeyRow}>
             <CalcKeys displayKey="1" onClick={()=> this.addNumber("1")} />
-            <CalcKeys displayKey="2" />
-            <CalcKeys displayKey="3" />
+            <CalcKeys displayKey="2" onClick={()=> this.addNumber("2")} />
+            <CalcKeys displayKey="3" onClick={()=> this.addNumber("3")} />
         </View>
         <View style={styles.calcKeyRow}>
-            <CalcKeys displayKey="4" />
-            <CalcKeys displayKey="5" />
-            <CalcKeys displayKey="6" />
+            <CalcKeys displayKey="4" onClick={()=> this.addNumber("4")} />
+            <CalcKeys displayKey="5" onClick={()=> this.addNumber("5")} />
+            <CalcKeys displayKey="6" onClick={()=> this.addNumber("6")} />
         </View>
         <View style={styles.calcKeyRow}>
-            <CalcKeys displayKey="7" />
-            <CalcKeys displayKey="8" />
-            <CalcKeys displayKey="9" />
+            <CalcKeys displayKey="7" onClick={()=> this.addNumber("7")} />
+            <CalcKeys displayKey="8" onClick={()=> this.addNumber("8")} />
+            <CalcKeys displayKey="9" onClick={()=> this.addNumber("9")} />
         </View>
         <View style={styles.calcKeyRow}>
-            <CalcKeys displayKey="0" />
+            <CalcKeys displayKey="0" onClick={()=> this.addNumber("0")} />
             <CalcKeys onClick={()=> this.clear()} displayKey="Clear" />
             <CalcKeys displayKey="Go" />
         </View>
