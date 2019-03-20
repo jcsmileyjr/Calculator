@@ -4,10 +4,13 @@
 ![Screen-shot of app in use](gif/Calculator.gif) 
 
 ### Table of Contents
-1. Purpose
-2. Motivation
-3. Objectives
-4. Technologies Used
+1. Demo Link
+2. Purpose
+3. Motivation
+4. Objectives
+5. Technologies Used
+
+### Demo Link: [Calculator](https://snack.expo.io/@jcsmileyjr/calculator)
 
 ### Purpose:
 A calculator app for the android mobile device
